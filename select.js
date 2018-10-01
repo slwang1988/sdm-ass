@@ -1,4 +1,4 @@
-var mysql  = require('mysql');  
+﻿var mysql  = require('mysql');  
 var rows=[];
 var series =[];
 var connection = mysql.createConnection({     
@@ -23,6 +23,7 @@ connection.query(sql,function (err, result) {
        //console.log(series);
        recall.recall(series,Response);
        console.log('------------------------------------------------------------\n\n');  
+       console.log('12345\n\n');  
 });
 connection.end();
 console.log(series);
