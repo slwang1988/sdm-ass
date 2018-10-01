@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <%- include("./public/head.ejs")%>
+    <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            /* css 代码  */
+        </style>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/series-label.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/oldie.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head>
+<body>
+<%- include("./public/header.ejs")%>
+<section class="main floatfix">
+    <%- include("./public/aside.ejs")%>
+    <section class="main-articles about">
+        <h2>Trends by Individual or Team</h2>
+    <!-- <p>本博客主要分享Node.js和前端技术，希望和大家共同成长。</p>-->
+        <button type="submit">Individual</button>
+        <button type="submit">Team</button>
+        <div id="container" style="max-width:800px;height:400px"></div>
+        <script>
+var sales = { "SalesData" : [ 
+{ "name"  : "AllProducts|Canada", "data" :449 },
+{ "name"  : "AllProducts|Mexico", "data" : 200 },
+{ "name"  : "AllProducts|USA",    "data" : 288 }
+                ]}  ; 
+var series = [],
+salesData= sales.SalesData;
+
+for (var i=0; i< salesData.length; i++) {
+series.push({"name" : salesData[i].name, "data" : salesData[i].data})
+};
+
+var chartdata = {
+    chart: {type: 'column'},
+    title: {text: 'Sales Data'},
+    xAxis: {
+        categories: ['Category 1']
+    },
+    yAxis: {
+        min: 0,
+        title: {text: 'Sales'}
+    },
+    series : []
+};
+chartdata.series = series;
+$('#chart').highcharts(chartdata);
+
+        </script>
+    </section>
+</section>
+
+<%- include("./public/footer.ejs")%>
+</body>
+</html>

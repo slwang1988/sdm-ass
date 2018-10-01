@@ -1,0 +1,16 @@
+<aside>
+    <section class="main-aside-avatar">
+        <img src="/img/avatar.jpg" alt="">
+    </section>
+    <ul>
+        <li><a href="/">Input Happiness</a></li>
+        <li><a href="/about">Show Trends</a></li>
+        <li><a href="friends">Invite Friends</a></li>
+       <!-- <li><a href="/edit">撰写文章</a></li>-->
+        <% if(user) { %>
+        <li><a href="/logout">Logout</a></li>
+        <% } else { %>
+        <li><a href="/login">Login</a></li>
+        <% } %>
+    </ul>
+</aside>
