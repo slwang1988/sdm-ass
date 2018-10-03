@@ -2,17 +2,48 @@
 <html lang="zh-cn">
 <head>
     <%- include("./public/head.ejs")%>
+    <script>
+           function copyText()
+            {
+            var sendMail = require('../blog/mail.js');
+            sendMail('452772461@qq.com','SDM test email', 'Hello, this is a testing email'); 
+               //document.getElementById("text1").value='1423';
+            }   	
+    </script>
 </head>
 <body>
 <%- include("./public/header.ejs")%>
 <section class="main floatfix">
     <%- include("./public/aside.ejs")%>
     <section class="main-articles friends">
-        <h2>Input Email and Invite Friends</h2>
-      
-            <input type="text" name='item' placeholder="Add email..." required />
-            <button type="submit">Invite</button>
-        
+        <h2>System Setting</h2>
+        <p>Inviting Friends</p>
+        <select>
+                <option value="1">Team 1</option>
+                <option value="2">Team 2</option>
+        </select>
+    <input type="text" id="text1" style="width:200px; height:20px;" placeholder="Add email..." required />
+    <button onclick="copyText()">Invite</button>
+    <br><br><br>
+
+        <p>Delay Setting</p>
+        <select>
+                <option value="5">5 mininutes later</option>
+                <option value="15">15 mininutes later</option>
+                <option value="30">30 mininutes later</option>
+        </select>
+        <button type="submit">Delay</button> 
+    <br><br><br>
+             <!--setting frequency for sending email -->
+        <p>Sending Emails</p>
+        <select>
+                <option value="1">Team 1</option>
+                <option value="2">Team 2</option>
+        </select>
+            <input type="time" name='item1'style="width:100px; height:20px;" value="11:00"/>         
+            <input type="time" name='item2'style="width:100px; height:20px;" value="16:00"/>    
+            <button type="submit">Confirm</button> 
+    <br><br><br>       
        <!-- <ul class="floatfix">
             <li><a href="https://github.com">GitHub</a></li>
             <li><a href="https://cnodejs.org/">CNode</a></li>
@@ -26,5 +57,7 @@
     </section>
 </section>
 <%- include("./public/footer.ejs")%>
+<!--add funciton of button-->
+
 </body>
 </html>
