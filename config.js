@@ -5,6 +5,5 @@ const DB = {
     password:"123456",
     database:"blog"
 };
-
 module.exports = DB;
 console.log('successful')
